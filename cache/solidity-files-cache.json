@@ -1,10 +1,10 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\Chanreach\\Documents\\Web3\\contracts\\SimplePurchase.sol": {
-      "lastModificationDate": 1783359127064,
-      "contentHash": "b5800ac6c012dda9d9c22a9159236dc8",
-      "sourceName": "contracts/SimplePurchase.sol",
+    "C:\\Users\\Chanreach\\Documents\\Web3\\contracts\\ECommerceMarketplace.sol": {
+      "lastModificationDate": 1783406525101,
+      "contentHash": "d770e447f0858bc8e67c5febee04268a",
+      "sourceName": "contracts/ECommerceMarketplace.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
@@ -34,7 +34,43 @@
         "^0.8.20"
       ],
       "artifacts": [
-        "SimplePurchase"
+        "ECommerceMarketplace"
+      ]
+    },
+    "C:\\Users\\Chanreach\\Documents\\Web3\\contracts\\Escrow.sol": {
+      "lastModificationDate": 1783407024917,
+      "contentHash": "c76914827e6426c61463a36fa0fa159b",
+      "sourceName": "contracts/Escrow.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Escrow"
       ]
     }
   }

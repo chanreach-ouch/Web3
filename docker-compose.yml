@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  hardhat-node:
+    build:
+      context: .
+      dockerfile: hardhat.Dockerfile
+    ports:
+      - "8545:8545"
+    networks:
+      - web3-network
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - RPC_URL=http://hardhat-node:8545
+    volumes:
+      # Mount the contracts directory so the backend can access the artifacts
+      - ./artifacts:/app/artifacts
+    depends_on:
+      - hardhat-node
+    networks:
+      - web3-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - web3-network
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+
+networks:
+  web3-network:
+    driver: bridge
